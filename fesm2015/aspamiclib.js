@@ -88,8 +88,8 @@ class MicComponent {
 MicComponent.decorators = [
     { type: Component, args: [{
                 selector: 'aspamic',
-                template: `<a (click)="startListening()" [style.background]="'url(' + imageSrc + ')'" style="cursor: pointer;" title="Listen"> </a>`,
-                styles: ["h1{color:#f0f}"]
+                template: `<a (click)="startListening()" class="micSize" [style.background]="'url(' + imageSrc + ')'" style="cursor: pointer;" title="Listen"> </a>`,
+                styles: ["h1{color:#f0f}.micSize{width:30px;height:30px;display:flex}"]
             }] }
 ];
 MicComponent.propDecorators = {
