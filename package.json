@@ -1,0 +1,26 @@
+{
+  "name": "aspamiclib",
+  "version": "1.0.0-alpha.0",
+  "repository": "https://github.com/dherges/ng-packaged.git",
+  "author": "kulandai",
+  "license": "MIT",
+  "private": true,
+  "peerDependencies": {
+    "@angular/core": "7.2.0",
+    "@angular/common": "7.2.0",
+    "watson-html5-speech-recognition": "^0.6.6"
+  },
+  "main": "bundles/aspamiclib.umd.js",
+  "module": "fesm5/aspamiclib.js",
+  "es2015": "fesm2015/aspamiclib.js",
+  "esm5": "esm5/aspamiclib.js",
+  "esm2015": "esm2015/aspamiclib.js",
+  "fesm5": "fesm5/aspamiclib.js",
+  "fesm2015": "fesm2015/aspamiclib.js",
+  "typings": "aspamiclib.d.ts",
+  "metadata": "aspamiclib.metadata.json",
+  "sideEffects": false,
+  "dependencies": {
+    "tslib": "^1.9.0"
+  }
+}
