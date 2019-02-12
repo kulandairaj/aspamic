@@ -18,6 +18,9 @@
     var activeSTT;
     var MicComponent = /** @class */ (function () {
         function MicComponent() {
+            this.apiURL = '';
+            this.imageSrc = '';
+            this.micResult = new core.EventEmitter();
         }
         /**
          * @return {?}
@@ -72,6 +75,7 @@
                         console.log(e.text);
                         // document.getElementById("recognizedText").innerHTML = e.text;
                         if (e.isFinal) {
+                            that.micResult.emit(e.text);
                             that.stopListening(e.text);
                         }
                     }),
@@ -92,10 +96,15 @@
         MicComponent.decorators = [
             { type: core.Component, args: [{
                         selector: 'aspamic',
-                        template: '<button  (click)="startListening()">Mic</button>',
+                        template: "<button  (click)=\"startListening()\" [style.background]=\"'url(' + imageSrc + ')'\">Mic</button>",
                         styles: ["h1{color:#f0f}"]
                     }] }
         ];
+        MicComponent.propDecorators = {
+            apiURL: [{ type: core.Input }],
+            imageSrc: [{ type: core.Input }],
+            micResult: [{ type: core.Output }]
+        };
         return MicComponent;
     }());
 

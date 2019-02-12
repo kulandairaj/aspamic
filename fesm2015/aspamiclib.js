@@ -1,4 +1,4 @@
-import { Component, NgModule } from '@angular/core';
+import { Component, Input, Output, EventEmitter, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 /**
@@ -14,6 +14,11 @@ var speech = new Speech.SpeechToText({
 /** @type {?} */
 var activeSTT;
 class MicComponent {
+    constructor() {
+        this.apiURL = '';
+        this.imageSrc = '';
+        this.micResult = new EventEmitter();
+    }
     /**
      * @return {?}
      */
@@ -59,6 +64,7 @@ class MicComponent {
                 console.log(e.text);
                 // document.getElementById("recognizedText").innerHTML = e.text;
                 if (e.isFinal) {
+                    that.micResult.emit(e.text);
                     that.stopListening(e.text);
                 }
             }),
@@ -82,10 +88,15 @@ class MicComponent {
 MicComponent.decorators = [
     { type: Component, args: [{
                 selector: 'aspamic',
-                template: '<button  (click)="startListening()">Mic</button>',
+                template: `<button  (click)="startListening()" [style.background]="'url(' + imageSrc + ')'">Mic</button>`,
                 styles: ["h1{color:#f0f}"]
             }] }
 ];
+MicComponent.propDecorators = {
+    apiURL: [{ type: Input }],
+    imageSrc: [{ type: Input }],
+    micResult: [{ type: Output }]
+};
 
 /**
  * @fileoverview added by tsickle
