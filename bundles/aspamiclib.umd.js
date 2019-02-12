@@ -96,7 +96,7 @@
         MicComponent.decorators = [
             { type: core.Component, args: [{
                         selector: 'aspamic',
-                        template: "<button  (click)=\"startListening()\" [style.background]=\"'url(' + imageSrc + ')'\">Mic</button>",
+                        template: "<a (click)=\"startListening()\" [style.background]=\"'url(' + imageSrc + ')'\" style=\"cursor: pointer;\" title=\"Listen\"> </a>",
                         styles: ["h1{color:#f0f}"]
                     }] }
         ];
@@ -113,24 +113,24 @@
      * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
      */
     // import { BarService } from './bar/bar.service';
-    var MyMicModule = /** @class */ (function () {
-        function MyMicModule() {
+    var AspaMicModule = /** @class */ (function () {
+        function AspaMicModule() {
         }
         /**
          * @return {?}
          */
-        MyMicModule.forRoot = /**
+        AspaMicModule.forRoot = /**
          * @return {?}
          */
             function () {
                 return {
-                    ngModule: MyMicModule,
+                    ngModule: AspaMicModule,
                     providers: [
                     // BarService
                     ]
                 };
             };
-        MyMicModule.decorators = [
+        AspaMicModule.decorators = [
             { type: core.NgModule, args: [{
                         imports: [
                             common.CommonModule
@@ -143,7 +143,7 @@
                         ]
                     },] }
         ];
-        return MyMicModule;
+        return AspaMicModule;
     }());
 
     /**
@@ -157,7 +157,7 @@
      */
 
     exports.MicComponent = MicComponent;
-    exports.MyMicModule = MyMicModule;
+    exports.AspaMicModule = AspaMicModule;
 
     Object.defineProperty(exports, '__esModule', { value: true });
 

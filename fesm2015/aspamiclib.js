@@ -88,7 +88,7 @@ class MicComponent {
 MicComponent.decorators = [
     { type: Component, args: [{
                 selector: 'aspamic',
-                template: `<button  (click)="startListening()" [style.background]="'url(' + imageSrc + ')'">Mic</button>`,
+                template: `<a (click)="startListening()" [style.background]="'url(' + imageSrc + ')'" style="cursor: pointer;" title="Listen"> </a>`,
                 styles: ["h1{color:#f0f}"]
             }] }
 ];
@@ -103,20 +103,20 @@ MicComponent.propDecorators = {
  * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 // import { BarService } from './bar/bar.service';
-class MyMicModule {
+class AspaMicModule {
     /**
      * @return {?}
      */
     static forRoot() {
         return {
-            ngModule: MyMicModule,
+            ngModule: AspaMicModule,
             providers: [
             // BarService
             ]
         };
     }
 }
-MyMicModule.decorators = [
+AspaMicModule.decorators = [
     { type: NgModule, args: [{
                 imports: [
                     CommonModule
@@ -140,6 +140,6 @@ MyMicModule.decorators = [
  * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 
-export { MicComponent, MyMicModule };
+export { MicComponent, AspaMicModule };
 
 //# sourceMappingURL=aspamiclib.js.map
